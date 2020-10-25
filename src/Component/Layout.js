@@ -23,6 +23,7 @@ class Layout extends Component {
                     <Route path="/" exact component={Home} />
                     <Route path="/profile" exact component={Profile} />
                 </Switch> */}
+             
             </Aux>
         )
     }

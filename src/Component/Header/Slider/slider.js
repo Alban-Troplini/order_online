@@ -5,42 +5,41 @@ import img2 from '../../../assets/image/2.jpg';
 import img3 from '../../../assets/image/3.jpg';
 
 
+
 const Slider = (props) => {
+
+    const img = [
+        {img: img1, h3: "Image 1", p: "This is the first image"},
+        {img: img2, h3: "Image 2", p: "This is the second image"},
+        {img: img3, h3: "Image 3", p: "This is the third image"}
+    ];
+
+    const image = img.map((image, index) => {  
+    return (
+
+          <Carousel.Item interval={2500}
+                        key={index}
+                        style={{ maxHeight: '200px'}}>
+                <img
+                    className="d-block w-100"
+                    src={image.img}
+                    style={{}}
+                    />
+                <Carousel.Caption>
+                    <h3 style={{color: '#2a9d8f'}}>{image.h3}</h3>
+                    <p style={{color: '#ffb703'}}>{image.p}</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+          
+    
+        )}
+   );
 
     return (
 
         <Carousel>
-            <Carousel.Item interval={1500}>
-                <img
-                className="d-block w-100"
-                src={img1}
-                />
-                <Carousel.Caption>
-                <h3 style={{color: '#2a9d8f'}}>First slide label</h3>
-                <p style={{color: '#ffb703'}}>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item interval={1500}>
-                <img
-                className="d-block w-100"
-                src={img2}
-                />
-                <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item interval={1500}>
-                <img
-                className="d-block w-100"
-                src={img3}
-                />
-                <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-</Carousel>
+            {image}
+        </Carousel>
 
     )
 }
