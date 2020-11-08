@@ -22,10 +22,7 @@ const Slider = () => {
                     src={image.img}
                     alt="cover"
                     />
-                <Carousel.Caption>
-                    <h3 style={{color: '#2a9d8f'}}>{image.h3}</h3>
-                    <p style={{color: '#ffb703'}}>{image.p}</p>
-                </Carousel.Caption>
+            
             </Carousel.Item>
           
     

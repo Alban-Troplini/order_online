@@ -1,0 +1,29 @@
+.card {
+    width: 150px;
+    border: 6px solid rgb(173, 29, 29);
+    padding: 10px;
+    text-align: center;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.card:hover{
+    background: rgb(255, 153, 0);
+    color: white;
+}
+
+.card img {
+    width: 60px;
+   
+}
+
+.cards a{
+    color: #d62000;
+    text-decoration: none;
+}
+
+
+.cards{
+    margin: 100px;
+    display: flex;
+    justify-content: space-around;
+}
