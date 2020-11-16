@@ -1,13 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Categories from './MenuCategory/menuCategories';
 import CatItems from './MenuItems/categoryItems';
 
 
-class Menu extends Component {
+const Menu = () => {
 
-
-
-    render() { 
 
         return ( 
             <div>
@@ -17,6 +14,6 @@ class Menu extends Component {
             
         );
     }
-}
+
  
 export default Menu;

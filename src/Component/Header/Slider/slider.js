@@ -14,7 +14,7 @@ const Slider = () => {
     const image = img.map((image, index) => {  
     return (
 
-          <Carousel.Item interval={2500}
+          <Carousel.Item interval={5000}
                         key={index}
                         style={{ maxHeight: '300px'}}>
                 <img

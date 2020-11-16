@@ -16,8 +16,8 @@
    
 }
 
-.cards a{
-    color: #d62000;
+.ancor{
+    color: #00d647;
     text-decoration: none;
 }
 
@@ -26,4 +26,23 @@
     margin: 100px;
     display: flex;
     justify-content: space-around;
+}
+
+@media screen and (max-width:600px) {
+
+    .card{
+        width: 70px;
+    }
+
+    .card img {
+        width: 20px;
+    }
+    .ancor{
+        color: transparent;
+    }
+    .cards{
+        margin: 20px;
+    }
+   
+
 }

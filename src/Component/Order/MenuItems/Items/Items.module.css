@@ -28,11 +28,53 @@
 
 .item{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .button{
     width: 100%;
     margin: 5px, 8px;
 
+}
+
+@media screen and (max-width:800px) {
+    .itemImage {
+        width: 100px;
+        height: 100px;
+    }
+    .itemPrice {
+        font-size: 1.1rem;
+    }
+    .itemText{
+        font-size: 1.5rem;
+    }
+    .item {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media screen and (max-width:600px) {
+ 
+    .itemPrice {
+        font-size: 1.3rem;
+    }
+    .itemText{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .itemImage {
+        width: 70px;
+        height: 70px;
+    }
+    .itemPrice {
+        font-size: .9rem;
+    }
+    .item {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    .itemText{
+        font-size: 0.8rem;
+    }
 }

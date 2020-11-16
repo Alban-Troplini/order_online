@@ -18,7 +18,7 @@ const Categories = () => {
 
      const cards = card.map((ca, i) => {
         return(
-            <Link to={ca.text} key={i}>
+            <Link to={ca.text} key={i} className={style.ancor}>
                 <div className={style.card}
                     >
                     <img src={ca.logo} alt="logo" />
