@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Modal, Button } from 'react-bootstrap/';
 import classes from './MenuItems/categoryItems.module.css';
+import './modal.module.css';
 
 const Modalo = (props) => {
 
@@ -9,19 +10,27 @@ const Modalo = (props) => {
         const handleClose = () => setShow(false);
         const handleShow = () => setShow(true);
 
-        // const product = props.Ilist.map(itm => {
+        const product = props.Ilist.map((itm, index) => {
 
-        //     return( 
-        //      <ul key={itm.id}>{itm.text}</ul>
-        //     );
+            return( 
+             <ul key={index}>
+               <div>
+                 <h3>{itm.text}</h3>
+                 <h3>X {itm.count}</h3>
+                 <h4>{itm.price} €</h4>
+               </div>
+               </ul>
+            );
             
-        // });
+        });
+
+        const itNu = product.length;
       
         return (
           <>
             <Button variant="primary" onClick={handleShow}
-            className={classes.modal}>
-              You have 3 prduct in your bag
+            className={itNu ? classes.modal : classes.nModal}>
+              You have {itNu} prduct in your bag
             </Button>
       
             <Modal
@@ -34,13 +43,14 @@ const Modalo = (props) => {
               Product to buy!
               </Modal.Header>
               <Modal.Body>
-                Products
+                {product}
+                <h4>Total: </h4> {props.totalPrice}
               </Modal.Body>
               <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                   Close
                 </Button>
-                <Button variant="primary">Understood</Button>
+                <Button variant="primary">Continue</Button>
               </Modal.Footer>
             </Modal>
           </>
