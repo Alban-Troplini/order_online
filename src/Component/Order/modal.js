@@ -44,7 +44,7 @@ const Modalo = (props) => {
               </Modal.Header>
               <Modal.Body>
                 {product}
-                <h4>Total: </h4> {props.totalPrice}
+                <h4>Total: </h4> {props.totalPrice(product.price)}
               </Modal.Body>
               <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>

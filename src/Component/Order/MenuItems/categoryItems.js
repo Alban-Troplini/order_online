@@ -52,6 +52,7 @@ class CatItems extends Component {
 
 
     addItem = ( item ) => {
+
         const addProd = this.state.listItems;
         
         this.setState( {listItems: [...addProd, item]} );
@@ -59,19 +60,15 @@ class CatItems extends Component {
         // const mulProd = addProd.some(prod  => item.id === prod.id) ? {this.setState( {listItems.})}
         // return this.state.data.some(item => val.name === item.name);
 
-        console.log(addProd);
     }
 
-    upadtePrice (items) {
-        const sum = Object.keys( items )
-        .map( igKey => {
-            return items[igKey];
-        } )
-        .reduce( ( sum, el ) => {
-            return sum + el;
-        }, 0 );
-    this.setState( { purchasable: sum > 0 } );
+    upadtePrice (item) {
 
+        const oldPrice = this.state.totalPrice;
+
+        const price = oldPrice + item;
+
+        this.setState({ totalPrice: price})
     }
     
 
