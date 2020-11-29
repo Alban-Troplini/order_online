@@ -24,8 +24,9 @@ const Modalo = (props) => {
             
         });
 
+
         const itNu = product.length;
-      
+        const price = props.price;
         return (
           <>
             <Button variant="primary" onClick={handleShow}
@@ -44,7 +45,7 @@ const Modalo = (props) => {
               </Modal.Header>
               <Modal.Body>
                 {product}
-                <h4>Total: </h4> {props.totalPrice(product.price)}
+                <h4>Total: {price} € </h4> 
               </Modal.Body>
               <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>

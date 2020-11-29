@@ -50,6 +50,20 @@ class CatItems extends Component {
         totalPrice: 0
     }
 
+    // itemTOAdd = ( cartItem, cartItemtoAdd) => {
+
+    //     const existingItem = cartItem.find(
+    //         cartIt => cartIt.id === cartItemtoAdd.id
+    //     );
+
+    //     if (existingItem) {
+    //         return cartItem.map(cartItem => 
+    //             cartItem.id === cartItemtoAdd.id
+    //             ? { ...cartItem, count: cartItem.count + 1 } 
+    //             : cartItem )}
+
+    //             return [ ...cartItem, { ...cartItemtoAdd, count: 1}];
+    // }
 
     addItem = ( item ) => {
 
@@ -57,19 +71,13 @@ class CatItems extends Component {
         
         this.setState( {listItems: [...addProd, item]} );
 
-        // const mulProd = addProd.some(prod  => item.id === prod.id) ? {this.setState( {listItems.})}
-        // return this.state.data.some(item => val.name === item.name);
-
-    }
-
-    upadtePrice (item) {
-
         const oldPrice = this.state.totalPrice;
+        const newPrice = oldPrice + item.price;
+        this.setState( {totalPrice: newPrice});
+        
 
-        const price = oldPrice + item;
-
-        this.setState({ totalPrice: price})
     }
+
     
 
 
@@ -77,7 +85,6 @@ class CatItems extends Component {
 
         const product = this.state.items;
         const list = this.state.listItems;
-    
         return ( 
             <Aux> 
                 <Switch>
@@ -85,6 +92,7 @@ class CatItems extends Component {
 
                     <Route path="/Burger" render={(props) => <Burger 
                         addProduct={this.addItem}
+                        itemAdd = {this.itemTOAdd}
                         toBurger={product.burgerItems} {...props}/>}/>
                     <Route path="/Pizza" render={(props) => <Pizza 
                         addProduct={this.addItem}
@@ -94,7 +102,7 @@ class CatItems extends Component {
                         toDrinks={product.drinkItems} {...props}/>}/>
                 </Switch>
                <Modal Ilist={list}
-                      totalPrice={this.upadtePrice} />
+                      price={this.state.totalPrice}/>
             </Aux>
            
            
